@@ -24,12 +24,13 @@ class AuthController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => $request->password,
+            'tanggal_lahir' => $request->tanggal_lahir,
         ];
         $formData['password'] = bcrypt($request->password);
   
         $user = SysUser::create($formData);  
         $data = $user;
-        $data->token = $user->createToken('tesBUMN')->accessToken;
+        $data->token = $user->createToken('Razin')->accessToken;
   
         return $this->successResponse($data, 200);
           
@@ -45,7 +46,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) 
         {
             $data = Auth::user();
-            $data->token = Auth::user()->createToken('tesBUMN')->accessToken;
+            $data->token = Auth::user()->createToken('Razin')->accessToken;
             return $this->successResponse($data, 200);
         }
   
