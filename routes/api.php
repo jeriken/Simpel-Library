@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ProfileController;
 
@@ -21,6 +22,11 @@ Route::prefix('posts')->middleware('auth:api')->group(function () {
     Route::post('/', [PostController::class, 'store'])->name('store');    
     Route::put('/{id}', [PostController::class, 'update'])->name('update');   
     Route::delete('/{id}', [PostController::class, 'destroy'])->name('destroy');    
+});
+
+Route::prefix('users')->middleware('auth:api')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('index');   
+    Route::delete('/{id}', [UserController::class, 'destroy'])->name('destroy');
 });
 
 Route::prefix('profile')->middleware('auth:api')->group(function () {
