@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
-class Post extends Model
+class MstBooks extends Model
 {
     use HasFactory;
+
+    protected $table = 'mst_books';
 
     /**
      * fillable
@@ -16,21 +18,15 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
+        'judul',
+        'penerbit',
         'user_id',
-        'image',
-        'title',
-        'content',
+        'halaman',
+        'stok',
     ];
 
-    /**
-     * image
-     *
-     * @return Attribute
-     */
-    protected function image(): Attribute
-    {
-        return Attribute::make(
-            get: fn ($image) => url('/storage/posts/' . $image),
-        );
+    public function pinjam(){
+        return $this->hasMany(TrxPinjam::class, 'user_id');
     }
+
 }
