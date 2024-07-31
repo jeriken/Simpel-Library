@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\Api\ProfileController;
 
 Route::get('/user', function (Request $request) {
@@ -22,6 +23,14 @@ Route::prefix('posts')->middleware('auth:api')->group(function () {
     Route::post('/', [PostController::class, 'store'])->name('store');    
     Route::put('/{id}', [PostController::class, 'update'])->name('update');   
     Route::delete('/{id}', [PostController::class, 'destroy'])->name('destroy');    
+});
+
+Route::prefix('books')->middleware('auth:api')->group(function () {
+    Route::get('/', [BookController::class, 'index'])->name('index');    
+    Route::get('/{id}', [BookController::class, 'show'])->name('show');    
+    Route::post('/', [BookController::class, 'store'])->name('store');    
+    Route::put('/{id}', [BookController::class, 'update'])->name('update');   
+    Route::delete('/{id}', [BookController::class, 'destroy'])->name('destroy');    
 });
 
 Route::prefix('users')->middleware('auth:api')->group(function () {

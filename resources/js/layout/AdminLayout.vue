@@ -9,7 +9,9 @@ const showingNavigationDropdown = ref(false);
 
 const links = [
     { href: '/dashboard', label: 'Dashboard' },
-    { href: '/post', label: 'Postingan' },
+    { href: '/user', label: 'Anggota' },
+    { href: '/book', label: 'Buku' },
+
 ]
 
 const settings = [
@@ -94,7 +96,8 @@ const settings = [
                 </div>
 
                 <!-- Responsive Navigation Menu -->
-                <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }" class="sm:hidden">
+                <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }"
+                    class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
                         <template v-for="link in links">
                             <ResponsiveNavLink :href="link.href" :active="link.href == $route.path ? true : false">
@@ -130,7 +133,9 @@ const settings = [
 
             <!-- Page Content -->
             <main>
-                <slot />
+                <div class="py-12">
+                    <slot />
+                </div>
             </main>
         </div>
     </div>

@@ -6,7 +6,9 @@ import Register from './pages/auth/Register.vue'
 import Dashboard from './pages/Dashboard.vue'
 import Post from './pages/post/Post.vue'
 import User from './pages/user/User.vue'
-
+import Book from './pages/book/Book.vue'
+import AddBook from './pages/book/Add.vue'
+import EditBook from './pages/book/Edit.vue'
 
 
 export default createRouter({
@@ -53,6 +55,24 @@ export default createRouter({
             name: 'user',
             component: User,
             meta: { layout: 'Admin', title: 'Anggota' },
+        },
+        {
+            path: '/book',
+            name: 'book',
+            component: Book,
+            meta: { layout: 'Admin', title: 'Buku' },
+        },
+        {
+            path: '/book/add',
+            name: 'addbook',
+            component: AddBook,
+            meta: { layout: 'Admin', title: 'Tambah Buku' },
+        },
+        {
+            path: '/book/edit/:id',
+            name: 'editbook',
+            component: EditBook,
+            meta: { layout: 'Admin', title: 'Edit Buku' },
         },
     ]
 })

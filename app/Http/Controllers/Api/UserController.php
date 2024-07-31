@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Traits\ApiResponses;
 use App\Models\SysUser;
@@ -11,7 +12,7 @@ class UserController extends Controller
 {
     use ApiResponses;
 
-    public function index()
+    public function index(): JsonResponse
     {
         //get all users
         $users = SysUser::get();
