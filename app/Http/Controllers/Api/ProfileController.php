@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\JsonResponse;
 use App\Traits\ApiResponses;
-use App\Models\User;
+use App\Models\SysUser;
 
 
 

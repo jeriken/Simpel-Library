@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\JsonResponse;
 use App\Traits\ApiResponses;
-use App\Models\User;
+use App\Models\SysUser;
 
 
 
@@ -27,7 +27,7 @@ class AuthController extends Controller
         ];
         $formData['password'] = bcrypt($request->password);
   
-        $user = User::create($formData);  
+        $user = SysUser::create($formData);  
         $data = $user;
         $data->token = $user->createToken('tesBUMN')->accessToken;
   
