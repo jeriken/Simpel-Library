@@ -26,7 +26,7 @@ class MstBooks extends Model
     ];
 
     public function pinjam(){
-        return $this->hasMany(TrxPinjam::class, 'user_id');
+        return $this->hasMany(TrxPinjam::class, 'book_id');
     }
 
 }

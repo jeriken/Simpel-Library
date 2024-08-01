@@ -24,6 +24,11 @@ class TrxPinjam extends Model
         'status',
     ];
 
+    public function getStatusAttribute($value)
+    {
+        return ($value == 1) ? "Dikembalikan" : "Belum Dikembalikan";
+    }
+
     public function user(){
         return $this->belongsTo(SysUser::class, 'user_id', 'id');
     }

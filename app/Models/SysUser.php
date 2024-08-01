@@ -50,6 +50,6 @@ class SysUser extends Authenticatable
     }
 
     public function pinjam(){
-        return $this->hasMany(TrxPinjam::class, 'book_id');
+        return $this->hasMany(TrxPinjam::class, 'user_id');
     }
 }
