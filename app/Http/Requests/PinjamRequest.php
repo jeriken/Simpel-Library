@@ -25,8 +25,6 @@ class PinjamRequest extends FormRequest
             'user_id'     => 'required',
             'book_id'   => 'required',
             'date_pinjam'   => 'date',
-            'date_retur'   => 'date',
-            'status'   => 'required',
         ];
     }
 }

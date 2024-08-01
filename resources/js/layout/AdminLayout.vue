@@ -11,6 +11,7 @@ const links = [
     { href: '/dashboard', label: 'Dashboard' },
     { href: '/user', label: 'Anggota' },
     { href: '/book', label: 'Buku' },
+    { href: '/pinjam', label: 'Pinjam Buku' },
 
 ]
 

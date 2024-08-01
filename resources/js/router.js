@@ -9,6 +9,9 @@ import User from './pages/user/User.vue'
 import Book from './pages/book/Book.vue'
 import AddBook from './pages/book/Add.vue'
 import EditBook from './pages/book/Edit.vue'
+import Pinjam from './pages/pinjam/Pinjam.vue'
+import AddPinjam from './pages/pinjam/Add.vue'
+import EditPinjam from './pages/pinjam/Edit.vue'
 
 
 export default createRouter({
@@ -73,6 +76,24 @@ export default createRouter({
             name: 'editbook',
             component: EditBook,
             meta: { layout: 'Admin', title: 'Edit Buku' },
+        },
+        {
+            path: '/pinjam',
+            name: 'pinjam',
+            component: Pinjam,
+            meta: { layout: 'Admin', title: 'Pinjam' },
+        },
+        {
+            path: '/pinjam/add',
+            name: 'addpinjam',
+            component: AddPinjam,
+            meta: { layout: 'Admin', title: 'Tambah Pinjam' },
+        },
+        {
+            path: '/pinjam/edit/:id',
+            name: 'editpinjam',
+            component: EditPinjam,
+            meta: { layout: 'Admin', title: 'Edit Pinjam' },
         },
     ]
 })
