@@ -109,6 +109,7 @@ export default {
             let tanggal_lahir = new Date(this.tanggal_lahir)
             let password = this.password
             let password_confirmation = this.passwordConfirmation
+            let level = 1
 
             //send server with axios
             axios.post('/api/auth/register',
@@ -117,7 +118,8 @@ export default {
                     email,
                     tanggal_lahir,
                     password,
-                    password_confirmation
+                    password_confirmation,
+                    level
                 },
                 {
                     headers: {

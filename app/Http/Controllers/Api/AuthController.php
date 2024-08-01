@@ -25,6 +25,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => $request->password,
             'tanggal_lahir' => date('Y-m-d h:i:s', strtotime($request->tanggal_lahir)),
+            'level' => 1,
         ];
         $formData['password'] = bcrypt($request->password);
   

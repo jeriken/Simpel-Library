@@ -43,7 +43,6 @@ class SysUser extends Authenticatable
     protected function casts(): array
     {
         return [
-            'tanggal_lahir' => 'datetime',
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];

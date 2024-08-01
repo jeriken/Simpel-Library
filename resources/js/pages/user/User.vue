@@ -4,6 +4,9 @@
             <h1 class="font-semibold text-xl">
                 Daftar Anggota
             </h1>
+            <a href="user/add"><button type="submit"
+                    class="rounded-md bg-indigo-600 px-8 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Tambah
+                    Anggota</button></a>
         </div>
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div>
@@ -72,6 +75,22 @@
                                 </td>
 
                                 <td class="p-4 border-b border-blue-gray-50">
+                                    <a :href="'/user/edit/' + user.id">
+                                        <button
+                                            class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
+                                            type="button">
+                                            <span
+                                                class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
+                                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M12 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V12M9 15V12.5L17.75 3.75C18.4404 3.05964 19.5596 3.05964 20.25 3.75V3.75C20.9404 4.44036 20.9404 5.55964 20.25 6.25L15.5 11L11.5 15H9Z"
+                                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </a>
                                     <button
                                         class="relative align-middle select-none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20"
                                         type="button" @click="deleteData(user.id)">
