@@ -29,6 +29,11 @@
                                 <th class="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
                                     <p
                                         class="block antialiased font-sans text-sm text-blue-gray-900 font-bold leading-none opacity-70">
+                                        Total Peminjaman</p>
+                                </th>
+                                <th class="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
+                                    <p
+                                        class="block antialiased font-sans text-sm text-blue-gray-900 font-bold leading-none opacity-70">
                                         Tanggal Join</p>
                                 </th>
                                 <th class="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4">
@@ -54,6 +59,11 @@
                                     <p
                                         class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
                                         {{ user.name }}</p>
+                                </td>
+                                <td class="p-4 border-b border-blue-gray-50">
+                                    <p
+                                        class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal">
+                                        {{ user.pinjam_count }}</p>
                                 </td>
                                 <td class="p-4 border-b border-blue-gray-50">
                                     <p
@@ -122,6 +132,7 @@ export default {
 
                     if (response.data) {
                         this.userData = response.data
+                        console.log(this.userData)
                     }
 
                 }).catch(error => {

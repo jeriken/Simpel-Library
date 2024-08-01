@@ -16,7 +16,20 @@ class BookController extends Controller
     public function index(): JsonResponse
     {
         //get all books
-        $books = MstBooks::get();
+        $books = MstBooks::withCount([
+            'pinjam' => function ($query) {
+                 $query->where('status', 0);
+                }
+            ])->get();
+
+        //return collection of books
+        return $this->successResponse($books, 200);
+    }
+
+    public function stok(): JsonResponse
+    {
+        //get all books
+        $books = MstBooks::where('stok', '>', '0')->get();
 
         //return collection of books
         return $this->successResponse($books, 200);

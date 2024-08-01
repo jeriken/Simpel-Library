@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index(): JsonResponse
     {
         //get all users
-        $users = SysUser::get();
+        $users = SysUser::withCount('pinjam')->get();
 
         //return collection of users
         return $this->successResponse($users, 200);
