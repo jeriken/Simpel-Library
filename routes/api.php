@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\BookController;
 use App\Http\Controllers\Api\PinjamController;
+use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\ProfileController;
 
 // Route::get('/user', function (Request $request) {
@@ -49,6 +50,10 @@ Route::prefix('users')->middleware('auth:api')->group(function () {
     Route::post('/', [UserController::class, 'store'])->name('store');    
     Route::put('/{id}', [UserController::class, 'update'])->name('update');   
     Route::delete('/{id}', [UserController::class, 'destroy'])->name('destroy');
+});
+
+Route::prefix('dashboard')->middleware('auth:api')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('index');   
 });
 
 Route::prefix('profile')->middleware('auth:api')->group(function () {
